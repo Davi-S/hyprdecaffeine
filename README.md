@@ -22,9 +22,7 @@ CLI backend and a clean, integrated Rofi GUI.
 - **Dynamic GUI:** The Rofi menu actively checks for running timers and
   dynamically injects a "Turn Off" option displaying the remaining time.
 
----
-
-## 📦 Requirements
+## Requirements
 
 - **`systemd`**: For timer management and system suspension.
 - **`rofi`**: For the graphical menu.
@@ -32,9 +30,7 @@ CLI backend and a clean, integrated Rofi GUI.
 - **Nerd Fonts**: (Optional but recommended) For the icons used in the Rofi menu
   and notifications.
 
----
-
-## 🛠️ Installation
+## Installation
 
 ### Arch Linux (AUR)
 
@@ -42,9 +38,7 @@ CLI backend and a clean, integrated Rofi GUI.
 paru -Syu hyprdecaffeine
 ```
 
----
-
-## 🚀 Usage
+## Usage
 
 `hyprdecaffeine` functions as both a CLI tool and a GUI launcher.
 
@@ -76,9 +70,7 @@ hyprdecaffeine stop
 
 ```
 
----
-
-## ⌨️ Hyprland Integration
+## Hyprland Integration
 
 To bind the Rofi menu to a keyboard shortcut in Hyprland, add the following to
 your `~/.config/hypr/hyprland.conf`:
@@ -88,10 +80,3 @@ your `~/.config/hypr/hyprland.conf`:
 bind = $mainMod SHIFT, S, exec, hyprdecaffeine menu
 
 ```
-
----
-
-## 📝 License
-
-This project is licensed under the MIT License.
-
