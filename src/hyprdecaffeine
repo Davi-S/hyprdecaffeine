@@ -46,7 +46,7 @@ stop_timer() {
 
     if [[ "$quiet" != "true" ]]; then
         # Send the "Off" notification
-        notify-send -a "hyprdecaffeine" "󰅖 Decaffeine Off" "Suspend timer disabled"
+        notify-send -a "hyprdecaffeine" "󰒲 Decaffeine Off" "Suspend timer disabled"
     fi
 }
 
@@ -156,11 +156,11 @@ show_menu() {
     current_status=$(get_status)
 
     # Base options with Nerd Font icons
-    local options="󱎫 15 min\n󱎫 30 min\n󱎫 1 hour\n󱎫 2 hours\n󰔟 Custom..."
+    local options="󰔛 15 min\n󰔛 30 min\n󰔛 1 hour\n󰔛 2 hours\n󰔛 Custom..."
 
     # Inject the separator and Cancel option at the BOTTOM if a timer is running
     if [[ "$current_status" != "Inactive" ]]; then
-        options="$options\n──────────────\n󰅖 Cancel Timer ($current_status)"
+        options="$options\n──────────────\n󰤆 Turn Off ($current_status)"
     fi
 
     # rofi exits 1 if the user presses Escape. '|| true' prevents the script from crashing due to 'set -e'
@@ -170,19 +170,19 @@ show_menu() {
 
     # Handle the selection, ensuring icons are included in the match strings
     case "$choice" in
-    "󱎫 15 min")
+    "󰔛 15 min")
         start_timer "15m"
         ;;
-    "󱎫 30 min")
+    "󰔛 30 min")
         start_timer "30m"
         ;;
-    "󱎫 1 hour")
+    "󰔛 1 hour")
         start_timer "1h"
         ;;
-    "󱎫 2 hours")
+    "󰔛 2 hours")
         start_timer "2h"
         ;;
-    "󰔟 Custom...")
+    "󰔛 Custom...")
         local custom_min
         custom_min=$(rofi -dmenu -p "󰔟 Enter minutes (e.g., 45):" || true)
 
@@ -193,7 +193,7 @@ show_menu() {
             notify-send -u critical -a "hyprdecaffeine" "Error" "Invalid input: '$custom_min'. Please enter numbers only."
         fi
         ;;
-    "󰅖 Cancel"*)
+    "󰤆 Turn Off"*)
         stop_timer
         # Optionally add a system notification here, e.g.: notify-send "Hyprdecaffeine" "Timer Cancelled"
         ;;
