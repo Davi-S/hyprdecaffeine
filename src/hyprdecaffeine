@@ -157,13 +157,13 @@ show_menu() {
 
     # Inject the separator and Cancel option at the BOTTOM if a timer is running
     if [[ "$current_status" != "Inactive" ]]; then
-        options="$options\n──────────────\n󰤆 Turn Off ($current_status)"
+        options="$options\n────────────────────────\n󰤆 Turn Off ($current_status)"
     fi
 
     # rofi exits 1 if the user presses Escape. '|| true' prevents the script from crashing due to 'set -e'
     # Using a Nerd Font sleep icon (󰒲) for the input prompt
     local choice
-    choice=$(echo -e "$options" | rofi -dmenu -i -p "󰒲 Suspend in:" || true)
+    choice=$(echo -e "$options" | rofi -dmenu -i -p "󰒲 Decaffeine:" || true)
 
     # Handle the selection, ensuring icons are included in the match strings
     case "$choice" in
