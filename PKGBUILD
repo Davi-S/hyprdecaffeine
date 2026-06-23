@@ -1,19 +1,19 @@
 # Maintainer: Davi Alves Sampaio <davialvessampaio00@gmail.com>
-pkgname=hyprdecaffeine
-pkgver=1.0.0
+pkgname=decaf
+pkgver=1.0.3
 pkgrel=1
-pkgdesc="A Rofi-based sleep timer utility for Wayland/Hyprland"
+pkgdesc="A Rofi-based sleep timer utility"
 arch=('any')
-url="https://github.com/davi-s/hyprdecaffeine"
+url="https://github.com/davi-s/decaf"
 license=('MIT')
 depends=('bash' 'systemd' 'rofi' 'libnotify')
 # This downloads the source code directly from your GitHub release
-source=("$pkgname-$pkgver.tar.gz::https://github.com/davi-s/hyprdecaffeine/archive/refs/tags/v${pkgver}.tar.gz")
-sha256sums=('2d899033f4849096f671eb565a0e4e693c070446ac920658927ff175bedc03f1')
+source=("$pkgname-$pkgver.tar.gz::https://github.com/davi-s/decaf/archive/refs/tags/${pkgver}.tar.gz")
+sha256sums=('SKIP') # Remember to run updpkgsums or makepkg -g to update this
 
 package() {
     cd "$pkgname-$pkgver"
 
     # Install the script directly to /usr/bin
-    install -Dm755 src/hyprdecaffeine "$pkgdir/usr/bin/hyprdecaffeine"
+    install -Dm755 src/decaf "$pkgdir/usr/bin/decaf"
 }
